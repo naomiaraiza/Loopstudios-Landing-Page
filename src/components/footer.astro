@@ -1,0 +1,31 @@
+<footer class="bg-black px-6 md:px-10 lg:px-40 py-10">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="flex flex-col items-center md:items-start gap-6">
+      <img src="images/logo.svg" alt="Loopstudios" class="w-36" />
+      <nav class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+        {['About', 'Careers', 'Events', 'Products', 'Support'].map(item => (
+          <a href="#" class="text-white text-sm font-[Alata] relative group">
+            {item}
+            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-white transition-all duration-300 group-hover:w-2/3"></span>
+          </a>
+        ))}
+      </nav>
+    </div>
+    <div class="flex flex-col items-center md:items-end gap-4">
+      <div class="flex gap-4">
+        {[
+          { icon: 'images/icon-facebook.svg', alt: 'Facebook' },
+          { icon: 'images/icon-twitter.svg', alt: 'Twitter' },
+          { icon: 'images/icon-pinterest.svg', alt: 'Pinterest' },
+          { icon: 'images/icon-instagram.svg', alt: 'Instagram' },
+        ].map(s => (
+          <a href="#" class="relative group">
+            <img src={s.icon} alt={s.alt} class="w-5" />
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </div>
+      <p class="text-gray-500 text-sm font-[Alata]">© 2021 Loopstudios. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

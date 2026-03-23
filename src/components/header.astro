@@ -1,0 +1,38 @@
+<header id="header" class="absolute top-0 left-0 w-full z-50 px-6 py-8 md:px-10 lg:px-40 flex items-center justify-between">
+  <img src="images/logo.svg" alt="Loopstudios" class="w-36 md:w-48 z-50 relative" />
+
+  <nav class="hidden md:flex gap-6">
+    {['About', 'Careers', 'Events', 'Products', 'Support'].map(item => (
+      <a href="#" class="text-white font-[Alata] text-sm relative group">
+        {item}
+        <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-white transition-all duration-300 group-hover:w-2/3"></span>
+      </a>
+    ))}
+  </nav>
+
+  <button id="menu-btn" class="md:hidden z-50 relative">
+    <img id="icon-open" src="images/icon-hamburger.svg" alt="Menu" />
+    <img id="icon-close" src="images/icon-close.svg" alt="Close" class="hidden" />
+  </button>
+
+  <div id="mobile-menu" class="fixed inset-0 bg-black flex flex-col justify-end pb-16 px-6 z-40 hidden">
+    <nav class="flex flex-col gap-6">
+      {['About', 'Careers', 'Events', 'Products', 'Support'].map(item => (
+        <a href="#" class="text-white font-[Josefin Sans] uppercase text-2xl font-light tracking-widest">{item}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>
